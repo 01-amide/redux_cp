@@ -1,13 +1,13 @@
-import { useSelector } from "react-redux";
-import Task from "./Task";
+import { useSelector } from "react-redux"; // read tasks from store
+import Task from "./Task"; // single task row
 
-const ListTask = () => {
-  const { list } = useSelector((state) => state.tasks);
+const ListTask = () => { // renders list container
+  const { list } = useSelector((state) => state.tasks); // tasks array
 
   return (
-    <ul className="list">
+    <ul className="list">{/* semantic list */}
       {list.length > 0 && list.map((item) => (
-        <li key={item.id}>
+        <li key={item.id}> {/* stable key */}
           <Task task={item} />
         </li>
       ))}
